@@ -1,5 +1,7 @@
 package com.spring.mongo.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,5 +17,11 @@ public class MovieService {
 	public Movie saveMovie(Movie movie){
 		return repository.save(movie);
 	}
+	public List<Movie> findByAll(){
+		return repository.findAll();
+	}
 	
+	public void deleteMovieById(Long id){
+		repository.delete(id);
+	}
 }
